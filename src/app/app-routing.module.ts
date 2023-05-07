@@ -1,21 +1,33 @@
+import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListarPensamentoComponent } from './components/pensamentos/listar-pensamento/listar-pensamento.component';
-import { CriarPensamentoComponent } from './components/pensamentos/criar-pensamento/criar-pensamento.component';
-import { ExcluirPensamentoComponent } from './components/pensamentos/excluir-pensamento/excluir-pensamento.component';
-import { EditarPensamentosComponent } from './components/pensamentos/editar-pensamentos/editar-pensamentos.component';
+import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
+import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
+import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'listar-pensamento',
+    path: '',
+    redirectTo: 'listarPensamento',
     pathMatch: 'full'
   },
+  {
+    path: 'criarPensamento',
+    component: CriarPensamentoComponent
+  },
+  {
+    path: 'listarPensamento',
+    component: ListarPensamentoComponent
+  },
+  {
+    path: 'pensamentos/excluirPensamento/:id',
+    component: ExcluirPensamentoComponent
+  },
+  {
+    path: 'pensamentos/editarPensamento/:id',
+    component: EditarPensamentoComponent
+  }
 
-  { path: 'listar-pensamento', component: ListarPensamentoComponent },
-  { path: 'pensamentos/excluir-pensamento/:id', component: ExcluirPensamentoComponent }, //
-  { path: 'pensamentos/editar-pensamento/:id', component: EditarPensamentosComponent }, //
-
-  { path: 'criar-pensamento', component: CriarPensamentoComponent },
 ];
 
 @NgModule({
